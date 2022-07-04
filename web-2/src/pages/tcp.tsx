@@ -12,17 +12,6 @@ import { theme } from "../styles/theme";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-const series = [
-  {
-    name: "TCP In",
-    data: [31, 120, 10, 28, 51, 18, 109],
-  },
-  {
-    name: "TCP Out",
-    data: [31, 120, 10, 28, 51, 18, 109],
-  },
-];
-
 const Home: NextPage = () => {
   const [latestTcpInData, setLatestTcpInData] = useState<number>(-1);
   const [latestTcpOutData, setLatestTcpOutData] = useState<number>(-1);

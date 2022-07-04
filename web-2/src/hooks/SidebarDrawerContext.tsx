@@ -19,6 +19,7 @@ interface SidebarDrawerContextData extends UseDisclosureReturn {
   changeGroup: (value: string) => void;
   changeIp: (value: string) => void;
   changeIsRunning: () => void;
+  turnOffIsRunning: () => void;
 }
 
 const SidebarDrawerContext = createContext({} as SidebarDrawerContextData);
@@ -46,6 +47,10 @@ export const SidebarDrawerProvider: React.FC<SidebarDrawerProviderProps> = ({
     setIsRunning((previousState) => !previousState);
   };
 
+  const turnOffIsRunning = () => {
+    setIsRunning(false);
+  };
+
   useEffect(() => {
     disclosure.onClose();
   }, [router.asPath]);
@@ -60,6 +65,7 @@ export const SidebarDrawerProvider: React.FC<SidebarDrawerProviderProps> = ({
         changeGroup,
         changeIp,
         changeIsRunning,
+        turnOffIsRunning,
       }}
     >
       {children}

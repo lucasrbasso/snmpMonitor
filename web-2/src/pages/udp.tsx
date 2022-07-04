@@ -12,17 +12,6 @@ import { theme } from "../styles/theme";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-const series = [
-  {
-    name: "UDP In",
-    data: [31, 120, 10, 28, 51, 18, 109],
-  },
-  {
-    name: "UDP Out",
-    data: [31, 120, 10, 28, 51, 18, 109],
-  },
-];
-
 const Home: NextPage = () => {
   const [latestUdpInData, setLatestUdpInData] = useState<number>(-1);
   const [latestUdpOutData, setLatestUdpOutData] = useState<number>(-1);
